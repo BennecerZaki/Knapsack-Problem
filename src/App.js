@@ -54,15 +54,17 @@ function App() {
           weight: weights[i],
         });
         console.log(tab);
-        for (let k = 0; k < j; k++) {
-          if (cache[m - 1][k] === cache[m][j] - values[i]) {
-            console.log("J before : " + j);
-            console.log("I : " + i);
-            console.log("cache[i - 1][k] : " + cache[i - 1][k]);
-            console.log("cache[i][j] : " + cache[i][j]);
-            console.log("values[i] : " + values[i]);
-            j = k;
-            console.log("J after : " + j);
+        if (i !== 0) {
+          for (let k = 0; k < j; k++) {
+            if (cache[m - 1][k] === cache[m][j] - values[i]) {
+              console.log("J before : " + j);
+              console.log("I : " + i);
+              console.log("cache[i - 1][k] : " + cache[i - 1][k]);
+              console.log("cache[i][j] : " + cache[i][j]);
+              console.log("values[i] : " + values[i]);
+              j = k;
+              console.log("J after : " + j);
+            }
           }
         }
       }
